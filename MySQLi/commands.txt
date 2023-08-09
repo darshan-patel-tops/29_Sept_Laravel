@@ -1,0 +1,73 @@
+CREATE DATABASE sept29tts
+
+CREATE TABLE testing (test_clm int);
+
+drop TABLE testing;
+
+CREATE TABLE users(userid INT(10) PRIMARY key AUTO_INCREMENT,user_name varchar(50),email varchar(50),mobile varchar(50))
+
+ALTER TABLE users add (mm varchar(50))
+
+ALTER TABLE users CHANGE mm city varchar(50);
+
+ALTER TABLE users DROP city;
+
+RENAME TABLE users TO users_tbl;
+
+INSERT INTO `users` VALUES (NULL, 'data1', '111123', 'ma11il@mail.com', '65465466545', '2022-10-13 11:16:57.000000', 'Male', '1');
+
+INSERT INTO `users` (`userid`, `username`, `password`, `email`, `mobile`, `dob`, `gender`, `status`) VALUES (NULL, 'data', '123', 'mail@mail.com', '65465466545', '2022-10-13 11:16:57.000000', 'Male', '1');
+
+INSERT INTO `users` (`userid`, `username`, `password`, `email`, `mobile`, `dob`, `gender`, `status`) VALUES (NULL, 'data', '4545', '45mail@mail.com', '65465466545', '2022-10-13 11:16:57.000000', 'Male', '1'),(NULL, 'data', '123', 'mail@mail.com', '98798765487', '2022-10-13 11:16:57.000000', 'Female', '1'),(NULL, 'test', '1888', 'sooo@mail.com', '65465466545', '2022-10-13 11:16:57.000000', 'Male', '1');
+
+delete FROM users WHERE userid = 3
+
+delete FROM users;
+
+TRUNCATE TABLE users;
+
+UPDATE users SET 
+`username` = "",
+`password`= "",
+`email`= "",
+`mobile`= "",
+`dob``gender`= "",
+`status`= "" 
+WHERE 
+userid = 
+
+
+UPDATE users SET 
+`username` = "Check"
+
+UPDATE users SET 
+`username` = "Test"
+WHERE userid = 2
+
+
+
+UPDATE users SET 
+`username` = "New update",
+mobile ="6546546545"
+WHERE userid = 2
+
+
+
+SELECT * FROM `tblresult` 
+JOIN tblstudents
+ON tblresult.StudentId = tblstudents.StudentId
+
+
+SELECT tblstudents.StudentName,tblresult.marks FROM `tblresult` 
+JOIN tblstudents
+ON tblresult.StudentId = tblstudents.StudentId;
+
+
+SELECT tblstudents.StudentName,tblresult.marks FROM `tblresult` 
+LEFT JOIN tblstudents
+ON tblresult.StudentId = tblstudents.StudentId;
+
+SELECT tblstudents.StudentName,tblresult.marks FROM `tblresult` 
+RIGHT OUTER JOIN tblstudents 
+ON tblresult.StudentId = tblstudents.StudentId 
+WHERE tblresult.marks IS null;
